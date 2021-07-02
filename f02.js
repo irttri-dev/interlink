@@ -43,7 +43,7 @@ fs.open(fileName, 'rs', (err, fd) => {
         }
         str = newArr.join(',');
         str = str.replace(/\r\n,/g, "\r\n");
-        console.log(str);
+        // console.log(str);
         fs.writeFile(fileNewName, str, (err) => {
             if (err) {
                 console.error(err);
