@@ -38,12 +38,12 @@ fs.open(fileName, 'rs', (err, fd) => {
         for ( i = 0 ; i < newArr.length; i++) {
             if ( newArr[i] === undefined) newArr[i] = ' ';
         }
-        for (i = 7; i < newArr.length; i = i+8) {
+        for (i = indexEndFistStringNewArr; i < newArr.length; i = i+countColumNewArr) {
             newArr[i]=newArr[i]+"\r\n";
         }
         str = newArr.join(',');
         str = str.replace(/\r\n,/g, "\r\n");
-        // console.log(str);
+        console.log(str);
         fs.writeFile(fileNewName, str, (err) => {
             if (err) {
                 console.error(err);
